@@ -7,7 +7,7 @@
     <title>Catálogo | Bruna Toalhares - Micropigmentação Premium</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
@@ -52,141 +52,264 @@ body {
     padding: 0 1.25rem;
 }
 
-/* ================== HEADER & NAVIGATION ================== */
+/* ============================================
+   HEADER & NAVIGATION (IDÊNTICO AO INDEX.HTML)
+   ============================================ */
 header {
-    padding: 1rem 0;
-    background: rgba(10, 10, 10, 0.9);
+    position: static;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(45, 45, 45, 0.9) 100%);
     backdrop-filter: blur(15px);
-    position: sticky;
-    top: 0;
+    border-bottom: 1px solid rgba(212, 212, 212, 0.15);
     z-index: 1000;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2); /* Borda Gold suave */
+    padding: 1.2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--white);
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 0.5px;
     text-decoration: none;
-    color: white;
-    font-weight: 700;
-    font-size: 1.1rem;
-    z-index: 1100;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.logo:hover {
+    opacity: 0.8;
 }
 
 .logo-icon {
-    background: var(--accent); /* Logo Icon Gold */
-    color: var(--black);
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    font-family: 'Outfit', sans-serif;
+    display: none;
 }
 
-/* Desktop Nav */
-nav.desktop-nav {
+nav {
     display: none;
-    gap: 1.5rem;
-    align-items: center;
+    gap: 2.5rem;
+    flex: 1;
 }
 
 @media (min-width: 768px) {
-    nav.desktop-nav { display: flex; }
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    nav {
+        display: none;
+    }
 }
 
 nav a {
-    color: var(--text-secondary);
     text-decoration: none;
+    color: var(--text-secondary);
     font-size: 0.9rem;
     font-weight: 500;
-    transition: var(--transition);
+    transition: all 0.3s;
+    position: relative;
 }
 
-nav a:hover { color: var(--accent); }
+nav a:hover {
+    color: var(--white);
+}
 
-/* Mobile Menu Toggle */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--white);
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
 .menu-toggle {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 0.4rem;
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0.5rem;
+    margin-left: auto;
     z-index: 1100;
-    padding: 5px;
 }
 
 @media (min-width: 768px) {
-    .menu-toggle { display: none; }
+    .menu-toggle {
+        display: none;
+    }
 }
 
 .menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 2px;
+    width: 1.5rem;
+    height: 0.2rem;
     background: var(--white);
+    transition: all 0.3s;
     border-radius: 2px;
-    transition: var(--transition);
 }
 
-/* Toggle Animation */
-.menu-toggle.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.menu-toggle.active span:nth-child(2) { opacity: 0; }
-.menu-toggle.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-/* Mobile Nav Overlay */
 .mobile-nav {
-    position: fixed;
-    inset: 0;
-    background: var(--black);
-    display: flex;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(45, 45, 45, 0.95) 0%, rgba(0, 0, 0, 0.95) 100%);
+    border-top: 1px solid rgba(212, 212, 212, 0.15);
+    padding: 1.5rem;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     z-index: 1050;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease;
-    transform: translateY(-20px);
 }
 
 .mobile-nav.active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .mobile-nav a {
-    font-size: 1.5rem;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 600;
-    color: var(--white);
+    color: var(--text-secondary);
     text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.75rem 0;
+    transition: all 0.3s;
 }
 
-.mobile-nav a:hover { color: var(--accent); }
+.mobile-nav a:hover {
+    color: var(--white);
+}
+
+.pulse-text {
+    color: #ffae00;
+    animation: pulse 2s ease-in-out infinite;
+    font-weight: 800;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
 
 /* ================== GALLERY GRID ================== */
+main {
+    padding: 2rem 0 4rem 0;
+}
+
 .page-title {
     text-align: center;
-    margin: 3rem 0 2rem;
+    margin-bottom: 4rem;
+    animation: fadeInDown 0.8s ease-out;
 }
 
 .page-title h1 {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
     font-family: 'Outfit', sans-serif;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-title p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.page-title h1 span {
+    background: linear-gradient(135deg, #D4AF37 0%, #F1D592 50%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));
+}
+
+.lash-couture-signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #D4AF37 0%, #F1D592 50%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4)) drop-shadow(0 0 50px rgba(212, 175, 55, 0.2));
+    animation: glowPulseIntense 2s ease-in-out infinite;
+    padding: 0.5rem 0;
+    margin: 0;
+    text-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+}
+
+@media (max-width: 768px) {
+    .lash-couture-signature {
+        font-size: 2rem;
+    }
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));
+    }
+    50% {
+        filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
+    }
+}
+
+@keyframes glowPulseIntense {
+    0%, 100% {
+        filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4)) drop-shadow(0 0 50px rgba(212, 175, 55, 0.2));
+        text-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+    }
+    50% {
+        filter: drop-shadow(0 0 50px rgba(212, 175, 55, 0.6)) drop-shadow(0 0 80px rgba(212, 175, 55, 0.4));
+        text-shadow: 0 0 60px rgba(212, 175, 55, 0.5);
+    }
+}
+
+@media (max-width: 768px) {
+    .lash-couture-title {
+        font-size: 2.5rem;
+    }
+}
+
+
 
 .page-title span { color: var(--accent); }
 
@@ -199,48 +322,75 @@ nav a:hover { color: var(--accent); }
 }
 
 .filter-btn {
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    color: var(--accent);
-    padding: 6px 16px;
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-secondary);
+    padding: 10px 24px;
+    border-radius: 30px;
     cursor: pointer;
-    font-size: 0.85rem;
-    transition: var(--transition);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .filter-btn.active, .filter-btn:hover {
-    background: var(--accent);
+    background: var(--white);
     color: var(--black);
-    border-color: var(--accent);
+    border-color: var(--white);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 /* ========== LAYOUT: CARDS COM CARROSSEL ========== */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 1.75rem;
-    margin-bottom: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 0 auto 4rem auto;
+    max-width: 1400px;
+    width: 100%;
+    justify-items: center;
+}
+
+@media (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
 }
 
 .gallery-item {
     position: relative;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.02) 100%);
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    background: var(--dark-gray);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-lg);
     overflow: hidden;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     height: 100%;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .gallery-item:hover {
-    border-color: var(--accent);
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    background: var(--medium-gray);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 175, 55, 0.2), inset 0 0 30px rgba(212, 175, 55, 0.1);
 }
 
 /* ========== CARROSSEL NO CARD ========== */
@@ -411,22 +561,24 @@ nav a:hover { color: var(--accent); }
 
 .gallery-cta-btn {
     flex: 1;
-    padding: 8px 12px;
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    color: var(--accent);
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
     border-radius: 8px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     text-align: center;
 }
 
 .gallery-cta-btn:hover {
-    background: var(--accent);
+    background: var(--white);
     color: var(--black);
-    border-color: var(--accent);
+    border-color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.15);
 }
 
 /* ================== MODAL RESPONSIVO COM CARROSSEL ================== */
@@ -690,45 +842,35 @@ footer {
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">
-                    <div class="logo-icon">B</div>
-                    <span>Bruna Toalhares</span>
-                </a>
-                
-                <nav class="desktop-nav">
+                <a href="index.html" class="logo">Bruna Toalhares</a>
+                <nav>
                     <a href="index.html#hero">Início</a>
                     <a href="index.html#about">Sobre</a>
-                    <a href="catalogo.html">Catálogo</a>
-                    <a href="index.html#services">Serviços</a>
+                    <a href="catalogo.html"><span class="pulse-text">Catálogo</span></a>
                     <a href="index.html#testimonials">Depoimentos</a>
                     <a href="index.html#location">Localização</a>
+                    <a href="index.html#contact">Contato</a>
                 </nav>
-
                 <button class="menu-toggle" id="menuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
             </div>
+            <div class="mobile-nav" id="mobileNav">
+                <a href="index.html#hero">Início</a>
+                <a href="index.html#about">Sobre</a>
+                <a href="catalogo.html"><span class="pulse-text">Catálogo</span></a>
+                <a href="index.html#testimonials">Depoimentos</a>
+                <a href="index.html#location">Localização</a>
+                <a href="index.html#contact" class="btn btn-primary">Agendar</a>
+            </div>
         </div>
     </header>
 
-    <!-- Mobile Navigation Overlay -->
-    <nav class="mobile-nav" id="mobileNav">
-        <a href="index.html#hero" onclick="toggleMenu()">Início</a>
-        <a href="index.html#services" onclick="toggleMenu()">Serviços</a>
-        <a href="index.html#about" onclick="toggleMenu()">Sobre</a>
-        <a href="index.html#location" onclick="toggleMenu()">Localização</a>
-    </nav>
-
     <main class="container">
         <div class="page-title">
-            <h1>Lash <span>Couture</span></h1>
-            <p>Catálogo completo com todos modelos em cílios</p>
-        </div>
-
-        <div class="filters">
-            <button class="filter-btn active" onclick="filterGallery('all')">Todos</button>
+            <h1 class="lash-couture-signature">Lash Couture</h1>
         </div>
 
         <div class="gallery-grid" id="galleryGrid">

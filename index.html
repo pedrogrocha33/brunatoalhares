@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bruna Toalhares - Especialista em Micropigmentação Premium, Extensão de Cílios e Design de Sobrancelhas">
+    <meta name="theme-color" content="#000000">
+    
     <title>Bruna Toalhares | Micropigmentação Premium</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ============================================
+           CSS VARIABLES
+           ============================================ */
         :root {
+            /* Colors */
             --black: #000000;
             --dark-gray: #1a1a1a;
             --medium-gray: #2d2d2d;
@@ -26,13 +44,27 @@
             --text-secondary: #d0d0d0;
             --text-muted: #ffffff;
             --accent: #ffffff;
+            --gold-lux: #D4AF37;
+            --gold-bright: #F1D592;
+
+            /* Shadows */
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
             --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
             --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
-        }
 
-        html {
-            scroll-behavior: smooth;
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-2xl: 4rem;
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-full: 50%;
         }
 
         body {
@@ -43,6 +75,9 @@
             overflow-x: hidden;
         }
 
+        /* ============================================
+           CONTAINER & LAYOUT
+           ============================================ */
         .container {
             max-width: 1280px;
             margin: 0 auto;
@@ -61,58 +96,66 @@
             }
         }
 
-        /* Header */
+        /* ============================================
+           HEADER & NAVIGATION
+           ============================================ */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 15, 15, 0.98);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(45, 45, 45, 0.9) 100%);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(212, 212, 212, 0.15);
             z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: var(--shadow-md);
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 2rem;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            font-size: 1.3rem;
-            font-weight: 700;
+            gap: 0;
+            font-size: 2rem;
+            font-weight: 400;
             color: var(--white);
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Great Vibes', cursive;
             letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .logo:hover {
+            opacity: 0.8;
         }
 
         .logo-icon {
-            width: 2.0rem;
-            height: 2.0rem;
-            background: linear-gradient(135deg, #7a797700, #000000);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #d88c00b2;
-            font-weight: bold;
-            font-size: 1.2rem;
-            box-shadow: var(--shadow-md);
+            display: none;
         }
 
         nav {
             display: none;
             gap: 2.5rem;
+            flex: 1;
         }
 
         @media (min-width: 768px) {
             nav {
                 display: flex;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 767px) {
+            nav {
+                display: none;
             }
         }
 
@@ -150,7 +193,7 @@
             background: var(--white);
             color: var(--black);
             border: none;
-            border-radius: 6px;
+            border-radius: var(--radius-sm);
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
@@ -178,6 +221,7 @@
             border: none;
             cursor: pointer;
             padding: 0.5rem;
+            margin-left: auto;
         }
 
         @media (min-width: 768px) {
@@ -191,6 +235,7 @@
             height: 0.2rem;
             background: var(--white);
             transition: all 0.3s;
+            border-radius: 2px;
         }
 
         .mobile-nav {
@@ -199,36 +244,52 @@
             top: 100%;
             left: 0;
             right: 0;
-            background: var(--dark-gray);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 1rem;
+            background: linear-gradient(180deg, rgba(45, 45, 45, 0.95) 0%, rgba(0, 0, 0, 0.95) 100%);
+            border-top: 1px solid rgba(212, 212, 212, 0.15);
+            padding: 1.5rem;
             flex-direction: column;
             gap: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         }
 
         .mobile-nav.active {
             display: flex;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .mobile-nav a {
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.9rem;
-            padding: 0.5rem 0;
+            padding: 0.75rem 0;
+            transition: all 0.3s;
         }
 
         .mobile-nav a:hover {
             color: var(--white);
         }
 
-        
-
-        /* Main Content */
+        /* ============================================
+           MAIN CONTENT
+           ============================================ */
         main {
             margin-top: 80px;
         }
 
-        /* Hero Section */
+        /* ============================================
+           HERO SECTION
+           ============================================ */
         .hero {
             padding: 5rem 0;
             display: grid;
@@ -286,16 +347,57 @@
             }
         }
 
+        .hero-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .feature::before {
+            content: '';
+            width: 0.4rem;
+            height: 0.4rem;
+            background: var(--white);
+            border-radius: var(--radius-full);
+            flex-shrink: 0;
+        }
+
+        .hero img {
+            width: 100%;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+        }
+
+        .hero img:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
         .btn {
             padding: 1rem 2rem;
             border: none;
-            border-radius: 6px;
+            border-radius: var(--radius-sm);
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             text-decoration: none;
             text-align: center;
             font-size: 0.95rem;
+            display: inline-block;
         }
 
         .btn-primary {
@@ -319,44 +421,9 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        .hero-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .feature {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .feature::before {
-            content: '';
-            width: 0.4rem;
-            height: 0.4rem;
-            background: var(--white);
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
-        .hero img {
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s;
-        }
-
-        .hero img:hover {
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-            border-color: rgba(255, 255, 255, 0.25);
-        }
-
-        /* Section Styling */
+        /* ============================================
+           SECTION STYLING
+           ============================================ */
         section {
             padding: 5rem 0;
         }
@@ -377,40 +444,18 @@
         }
 
         .section-badge {
-    display: inline-block;
-    margin: 0 auto 20px auto; /* centraliza horizontalmente */
-    padding: 10px 24px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 1.2rem;
-    text-align: center;
-    color: #000000;
-    background: hsl(44, 98%, 48%); /* rosa choque */
-    box-shadow: 0 0 12px rgba(44, 98%, 48%);;
-    animation: pulseBadge 2.5s infinite ease-in-out;
-}
-
-/* efeito pulsante */
-@keyframes pulseBadge {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 12px rgba(255, 230, 0, 0.6);
-    }
-    50% {
-        transform: scale(1.08);
-        box-shadow: 0 0 22px rgba(255, 230, 0, 0.6);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 12px rgba(255, 230, 0, 0.6);
-    }
-}
-
-/* centralizar todo o bloco */
-.section-badge, h3, p {
-    text-align: center;
-}
-
+            display: inline-block;
+            margin: 0 auto 20px auto;
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 30px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
         .section-title h2 {
             font-family: 'Outfit', sans-serif;
@@ -437,7 +482,9 @@
             font-size: 1rem;
         }
 
-        /* About Section */
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
         .about-content {
             display: grid;
             grid-template-columns: 1fr;
@@ -448,6 +495,40 @@
         @media (min-width: 768px) {
             .about-content {
                 grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+            }
+        }
+
+        .about-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .about-image img:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        @media (max-width: 767px) {
+            .about-image img {
+                max-width: 80%;
+                margin: 0 auto;
+                display: block;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .about-image img {
+                max-width: 90%;
             }
         }
 
@@ -473,64 +554,81 @@
             margin-top: 2rem;
         }
 
+        @media (max-width: 640px) {
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
         .stat {
             text-align: center;
             padding: 1.5rem;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+            border-radius: var(--radius-md);
             border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 640px) {
+            .stat {
+                padding: 1.2rem;
+            }
         }
 
         .stat-number {
-    font-family: 'Outfit', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-
-    /* Gradiente dourado + verde ciano */
-    background: linear-gradient(135deg, #ffffff, #ffffff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* Brilho elegante */
-    text-shadow: 0 0 10px rgb(255, 196, 0),
-                 0 0 18px rgba(255, 230, 0, 0.87);
-}
-
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #ffffff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgb(255, 196, 0), 0 0 18px rgba(255, 230, 0, 0.87);
+        }
 
         .stat-label {
             font-size: 0.85rem;
             color: var(--text-muted);
         }
 
-        /* Services Section */
+        /* ============================================
+           SERVICES SECTION
+           ============================================ */
         .services-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 640px) {
             .services-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
             }
         }
 
-
-        .responsive-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-}
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
 
         .service-card {
             background: var(--dark-gray);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            border-radius: var(--radius-lg);
             padding: 2rem;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .service-card:hover {
@@ -540,11 +638,17 @@
             background: var(--medium-gray);
         }
 
+        @media (max-width: 640px) {
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
+
         .service-icon {
             width: 4rem;
             height: 4rem;
             background: rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -560,6 +664,12 @@
             font-weight: 800;
             color: var(--white);
             margin-bottom: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .service-card h3 {
+                font-size: 1.2rem;
+            }
         }
 
         .service-card p {
@@ -586,10 +696,12 @@
             width: 0.4rem;
             height: 0.4rem;
             background: var(--white);
-            border-radius: 50%;
+            border-radius: var(--radius-full);
         }
 
-        /* Testimonials Section */
+        /* ============================================
+           TESTIMONIALS SECTION
+           ============================================ */
         .testimonials-carousel {
             position: relative;
             max-width: 800px;
@@ -599,7 +711,7 @@
         .carousel-container {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(160, 160, 160, 0.03) 100%);
             border: 2px solid rgba(160, 160, 160, 0.25);
-            border-radius: 18px;
+            border-radius: var(--radius-lg);
             padding: 2rem 1.5rem;
             position: relative;
             overflow: hidden;
@@ -610,6 +722,7 @@
             align-items: center;
             box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
+            animation: pulse-border 3s ease-in-out infinite;
         }
 
         .carousel-slide {
@@ -625,36 +738,10 @@
             animation: slideInFade 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        @keyframes slideInFade {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse-border {
-            0%, 100% {
-                border-color: rgba(160, 160, 160, 0.25);
-                box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 15px rgba(100, 100, 100, 0);
-            }
-            50% {
-                border-color: rgba(160, 160, 160, 0.45);
-                box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 15px rgba(100, 100, 100, 0.15);
-            }
-        }
-
-        .carousel-container {
-            animation: pulse-border 3s ease-in-out infinite;
-        }
-
         .testimonial-image {
             width: 110px;
             height: 110px;
-            border-radius: 12px;
+            border-radius: var(--radius-md);
             object-fit: contain;
             margin-bottom: 1.2rem;
             border: 2px solid rgba(160, 160, 160, 0.185);
@@ -705,7 +792,7 @@
             color: var(--white);
             width: 40px;
             height: 40px;
-            border-radius: 50%;
+            border-radius: var(--radius-full);
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -730,7 +817,7 @@
         .dot {
             width: 10px;
             height: 10px;
-            border-radius: 50%;
+            border-radius: var(--radius-full);
             background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
             transition: all 0.3s;
@@ -746,434 +833,9 @@
             background: rgba(255, 255, 255, 0.5);
         }
 
-        .catalogo-button { text-align: center; margin-top: 20px; } .catalogo-button .btn { display: inline-block; padding: 12px 24px; background-color: #ffffff; color: #000000; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background-color 0.3s ease; } .catalogo-button .btn:hover { background-color: #ffbb00; }
-
-        /* Location Section */
-        .location-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        @media (min-width: 1024px) {
-            .location-content {
-                grid-template-columns: 2fr 1fr;
-            }
-        }
-
-        .map-container {
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: var(--shadow-lg);
-            height: 400px;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        .contact-card {
-            background: var(--medium-gray);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1.5rem;
-            display: flex;
-            gap: 1rem;
-            transition: all 0.3s;
-        }
-
-        .contact-card:hover {
-            border-color: rgba(255, 255, 255, 0.25);
-            box-shadow: var(--shadow-md);
-            background: var(--light-gray);
-        }
-
-        .contact-icon i {
-    font-size: 1.8rem;
-    color: #000000; /* dourado */
-    text-shadow: 0 0 12px rgb(255, 255, 255);
-}
-
-
-        .contact-text h4 {
-            color: var(--white);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .contact-text p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .contact-text a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .contact-text a:hover {
-            color: var(--white);
-        }
-
-        /* CTA Section */
-        .cta-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-
-        @media (min-width: 768px) {
-            .cta-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .cta-methods {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        .cta-method {
-            background: var(--medium-gray);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s;
-        }
-
-        .cta-method:hover {
-            border-color: rgba(255, 255, 255, 0.25);
-            box-shadow: var(--shadow-md);
-            transform: translateX(4px);
-            background: var(--light-gray);
-        }
-
-        .cta-method-icon {
-            width: 3.5rem;
-            height: 3.5rem;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.3rem;
-            flex-shrink: 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .cta-method-text h4 {
-            color: var(--white);
-            margin-bottom: 0.25rem;
-            font-weight: 600;
-        }
-
-        .cta-method-text p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Form */
-        .contact-form {
-            background: var(--medium-gray);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: var(--shadow-md);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.034);
-            border-radius: 6px;
-            color: var(--white);
-            font-family: 'Outfit', sans-serif;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--text-muted);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.08);
-            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-submit {
-            width: 100%;
-            padding: 1rem;
-            background: var(--white);
-            color: var(--black);
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.95rem;
-            box-shadow: var(--shadow-md);
-        }
-
-        .form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--black);
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            padding: 4rem 0 2rem;
-        }
-
-        .footer-content {
-    display: flex;
-    justify-content: center;   /* centraliza horizontalmente */
-    align-items: flex-start;   /* alinha pelo topo */
-    gap: 40px;                 /* espaçamento entre as colunas */
-    text-align: center;        /* centraliza o conteúdo dentro de cada seção */
-}
-
-
-        @media (min-width: 768px) {
-            .footer-content {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .footer-section h3 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .footer-section p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-links a {
-            width: 1.8rem;
-            height: 1.8rem;
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ff8c00;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .social-links a:hover {
-            transform: scale(1.2);
-            color: #ffaa00;
-            text-shadow: 0 0 10px rgba(255, 140, 0, 0.6);
-        }
-
-        .social-links a.instagram {
-            color: #ff8c00;
-        }
-
-        .social-links a.instagram:hover {
-            color: #ffaa00;
-            text-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
-        }
-
-        .social-links a.facebook {
-            color: #ff8c00;
-        }
-
-        .social-links a.facebook:hover {
-            color: #ffaa00;
-            text-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
-        }
-
-        .social-links a.whatsapp {
-            color: #ff8c00;
-        }
-
-        .social-links a.whatsapp:hover {
-            color: #ffaa00;
-            text-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 3.5rem;
-            height: 3.5rem;
-            background: #25d366;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgb(0, 0, 0);
-            text-decoration: none;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s;
-            z-index: 999;
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.6;
-            }
-        }
-
-        .pulse-text {
-            color: #ffae00;
-            animation: pulse 2s ease-in-out infinite;
-            font-weight: 800;
-        }
-
-        #testimonials .pulse-text {
-    color: #000000; /* branco */
-}
-
-
-
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .animate-slide-in-left {
-            animation: slideInLeft 0.8s ease-out;
-        }
-
-        .animate-slide-in-right {
-    text-align: center;
-    margin: 0 auto;
-    max-width: 800px; /* controla largura para não ficar muito esticado */
-}
-
-        /* Catálogo Styles */
+        /* ============================================
+           GALLERY & CATALOG SECTION
+           ============================================ */
         .page-title {
             text-align: center;
             margin-bottom: 3rem;
@@ -1201,7 +863,6 @@
             font-size: 1rem;
         }
 
-        /* Filters */
         .filters {
             display: flex;
             flex-wrap: wrap;
@@ -1230,7 +891,6 @@
             box-shadow: var(--shadow-md);
         }
 
-        /* Gallery Grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -1253,7 +913,7 @@
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 12px;
+            border-radius: var(--radius-lg);
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s;
@@ -1309,7 +969,29 @@
             font-size: 0.9rem;
         }
 
-        /* Modal */
+        .catalogo-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .catalogo-button .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .catalogo-button .btn:hover {
+            background-color: #ffbb00;
+        }
+
+        /* ============================================
+           MODAL
+           ============================================ */
         .modal {
             display: none;
             position: fixed;
@@ -1354,7 +1036,7 @@
 
         .modal-image {
             width: 100%;
-            border-radius: 12px;
+            border-radius: var(--radius-lg);
             margin-bottom: 2rem;
             border: 1px solid rgba(255, 255, 255, 0.15);
         }
@@ -1388,27 +1070,614 @@
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
-        .btn-secondary {
-            border: 2px solid var(--white);
+        /* ============================================
+           LUXURY TESTIMONIALS
+           ============================================ */
+        .lux-testimonials {
+            background: radial-gradient(circle at top, #0a0a0a, #000000);
+            padding: 100px 20px;
+            text-align: center;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .lux-title {
+            font-size: 2.8rem;
+            margin-bottom: 70px;
+            background: linear-gradient(45deg, #ffd700, #d4af37, #fff0a5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+
+        .lux-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .lux-card {
+            position: relative;
+            width: 320px;
+            padding: 40px 30px;
+            border-radius: 22px;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .lux-glow {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent 60%);
+            top: -50%;
+            left: -50%;
+            opacity: 0;
+            transition: 0.6s;
+        }
+
+        .lux-card:hover .lux-glow {
+            opacity: 1;
+        }
+
+        .lux-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border: 1px solid gold;
+            box-shadow: 0 0 35px rgba(255, 215, 0, 0.3);
+        }
+
+        .lux-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: var(--radius-full);
+            object-fit: cover;
+            border: 3px solid transparent;
+            background: linear-gradient(black, black) padding-box, linear-gradient(45deg, #ffd700, #d4af37, #fff0a5) border-box;
+            margin-bottom: 25px;
+        }
+
+        .lux-text {
+            color: #e6c86e;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .lux-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ffd700, #fff0a5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (max-width: 768px) {
+            .lux-title {
+                font-size: 2rem;
+                margin-bottom: 50px;
+            }
+
+            .lux-card {
+                width: 100%;
+                max-width: 320px;
+                padding: 30px 20px;
+            }
+
+            .lux-container {
+                gap: 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lux-photo {
+                width: 110px;
+                height: 110px;
+            }
+
+            .lux-text {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lux-title {
+                font-size: 1.5rem;
+            }
+
+            .lux-card {
+                max-width: 100%;
+                padding: 25px 15px;
+            }
+        }
+
+        /* ============================================
+           LOCATION SECTION
+           ============================================ */
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .location-content {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        .map-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow-lg);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .contact-card {
+            background: var(--medium-gray);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            align-items: flex-start;
+        }
+
+        .contact-card:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: var(--shadow-md);
+            background: var(--light-gray);
+        }
+
+        @media (max-width: 640px) {
+            .contact-card {
+                padding: 1.2rem;
+                gap: 0.75rem;
+            }
+        }
+
+        .contact-icon i {
+            font-size: 1.8rem;
+            color: #000000;
+            text-shadow: 0 0 12px rgb(255, 255, 255);
+        }
+
+        .contact-text h4 {
             color: var(--white);
-            background: transparent;
-            padding: 1rem 2rem;
-            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-text p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-text a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: var(--white);
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        .cta-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .cta-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .cta-methods {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .cta-method {
+            background: var(--medium-gray);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .cta-method:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+            background: var(--light-gray);
+        }
+
+        @media (max-width: 640px) {
+            .cta-method {
+                padding: 1.2rem;
+                gap: 0.75rem;
+            }
+        }
+
+        .cta-method-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-method-text h4 {
+            color: var(--white);
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .cta-method-text p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* ============================================
+           FORM STYLES
+           ============================================ */
+        .contact-form {
+            background: var(--medium-gray);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.034);
+            border-radius: var(--radius-sm);
+            color: var(--white);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--white);
+            color: var(--black);
+            border: none;
+            border-radius: var(--radius-sm);
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            text-decoration: none;
-            text-align: center;
             font-size: 0.95rem;
-            flex: 1;
+            box-shadow: var(--shadow-md);
         }
 
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .premium-footer {
+            background-color: var(--black-bg, #0A0A0A);
+            color: var(--white-text, #FFFFFF);
+            padding: 80px 0 40px 0;
+            font-family: 'Quicksand', sans-serif;
+            border-top: 2px solid var(--gold-lux);
+            position: relative;
+        }
+
+        .premium-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold-lux), transparent);
+            box-shadow: 0 0 20px var(--gold-lux);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--gold-lux);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .footer-brand p {
+            color: var(--gray-text, #A0A0A0);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .social-box {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-icons a {
+            color: var(--gold-lux);
+            font-size: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.3) translateY(-10px);
+            color: var(--gold-bright);
+            filter: drop-shadow(0 0 15px var(--gold-lux));
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-bottom p {
+            color: var(--gray-text, #A0A0A0);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .footer-bottom strong {
+            color: var(--gold-lux);
+        }
+
+        @media (max-width: 768px) {
+            .premium-footer {
+                padding: 60px 0 30px 0;
+            }
+
+            .footer-brand h3 {
+                font-size: 2rem;
+            }
+
+            .social-icons {
+                gap: 1.5rem;
+            }
+        }
+
+        /* ============================================
+           WHATSAPP BUTTON
+           ============================================ */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            background: #25d366;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFade {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes pulse-border {
+            0%, 100% {
+                border-color: rgba(160, 160, 160, 0.25);
+                box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 15px rgba(100, 100, 100, 0);
+            }
+            50% {
+                border-color: rgba(160, 160, 160, 0.45);
+                box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 15px rgba(100, 100, 100, 0.15);
+            }
+        }
+
+        .pulse-text {
+            color: #ffae00;
+            animation: pulse 2s ease-in-out infinite;
+            font-weight: 800;
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        /* ============================================
+           RESPONSIVE IMAGE
+           ============================================ */
+        .responsive-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -1416,26 +1685,27 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">🪬</div>
-                    <span>Bruna Toalhares</span>
-                </div>
-                    <nav>
+                <div class="logo">Bruna Toalhares</div>
+                <nav>
                     <a href="index.html#hero">Início</a>
                     <a href="index.html#about">Sobre</a>
-                    <a href="catalogo.html">Catálogo</a>
-                    <a href="index.html#testimonials"><span class="pulse-text">Depoimentos</span></a>
+                    <a href="catalogo.html"><span class="pulse-text">Catálogo</span></a>
+                    <a href="index.html#testimonials">Depoimentos</a>
                     <a href="index.html#location">Localização</a>
                     <a href="index.html#contact">Contato</a>
                 </nav>
-                
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
             <div class="mobile-nav" id="mobileNav">
                 <a href="index.html#hero">Início</a>
                 <a href="index.html#about">Sobre</a>
-                <a href="catalogo.html">Catálogo</a>
-                <a href="index.html#testimonials"><span class="pulse-text">Depoimentos</span></a>
-                <a href="index.html#location">Localização</a><span class="pulse-text">Localização</span>
+                <a href="catalogo.html"><span class="pulse-text">Catálogo</span></a>
+                <a href="index.html#testimonials">Depoimentos</a>
+                <a href="index.html#location">Localização</a>
                 <a href="index.html#contact" class="btn btn-primary">Agendar</a>
             </div>
         </div>
@@ -1448,8 +1718,7 @@
             <div class="container">
                 <div class="hero">
                     <div class="animate-slide-in-left">
-                        <h2>Micropigmentação<br><span>Extensão de Cílios & Design de Sombrancelhas</h2>
-                        
+                        <h2>Micropigmentação<br><span>Extensão de Cílios & Design de Sobrancelhas</span></h2>
                         
                         <div class="hero-features">
                             <div class="feature">Atendimento Exclusivo</div>
@@ -1474,13 +1743,10 @@
         <section id="about" class="section-dark">
             <div class="container">
                 <div class="about-content">
-                    <div class="animate-slide-in-left">
-                        <img src="img/bruna1.jpeg" 
-     alt="Bruna Toalhares - Profissional" 
-     style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);">
-
+                    <div class="animate-slide-in-left about-image">
+                        <img src="img/bruna1.jpeg" alt="Bruna Toalhares - Profissional">
                     </div>
-                    <div class="animate-slide-in-right">
+                    <div class="animate-slide-in-right about-text">
                         <div class="section-badge">Sobre Mim</div>
                         <h3>Profissional Dedicada à Beleza</h3>
                         <p>Meu nome é Bruna Toalhares e iniciei minha carreira em 2016, com paixão genuína pela transformação estética e bem-estar das minhas clientes.</p>
@@ -1506,204 +1772,52 @@
             </div>
         </section>
 
-      <!-- Catálogo Section -->
-<section id="catalogo" class="section-dark">
-    <div class="container">
-        <div class="page-title">
-            <h1>Catálogo de <span>Procedimentos</span></h1>
-            <p>Conheça os resultados incríveis de micropigmentação premium</p>
-        </div>
+        <!-- Luxury Testimonials Section -->
+        <section class="lux-testimonials" id="testimonials">
+            <h2 class="lux-title">Experiência dos Clientes</h2>
 
-        <div class="gallery-grid" id="galleryGrid">
-            <!-- Items will be generated by JavaScript -->
-        </div>
+            <div class="lux-container">
+                <!-- Card 1 -->
+                <div class="lux-card">
+                    <div class="lux-glow"></div>
+                    <img src="./img/babi.png" alt="Bárbara Mercante" class="lux-photo">
+                    <p class="lux-text">
+                        "Bru, não posso deixar de agradecer o seu cuidado com as minhas sobrancelhas a cada encontro nosso… admiro muito o seu trabalho, admiro o seu cuidado comigo, o seu atendimento impecável, um ambiente leve, livre da agitação que eu tô acostumada. Meu compromisso quinzenal com você é inegociável e se tornou para muito além de uma prestação de serviço, o encontro com uma grande amiga! ❤️"
+                    </p>
+                    <h3 class="lux-name">Bárbara Mercante</h3>
+                </div>
 
-        <!-- Botão para catálogo.html -->
-        <div class="catalogo-button">
-            <a href="catalogo.html" class="btn">Ver Catálogo Completo</a>
-        </div>
-    </div>
-</section>
+                <!-- Card 2 -->
+                <div class="lux-card">
+                    <div class="lux-glow"></div>
+                    <img src="./img/angel.jpeg" alt="Angélica Martins" class="lux-photo">
+                    <p class="lux-text">
+                        "Amiga, queria agradecer pelo seu excelente trabalho. Admiro o cuidado e o carinho que você tem com cada cliente. Um atendimento perfeito e impecável. Uma profissional de excelência"
+                    </p>
+                    <h3 class="lux-name">Angélica Martins</h3>
+                </div>
 
+                <!-- Card 3 -->
+                <div class="lux-card">
+                    <div class="lux-glow"></div>
+                    <img src="./img/marina.jpeg" alt="Marina Oliveira" class="lux-photo">
+                    <p class="lux-text">
+                        "❤️💕 Além de amiga você é uma profissional incrível !! Seu trabalho transforma olhares e aumenta auto estima nos deixando ainda mais lindas !!! Obrigada por tanto cuidado 😍minhas sobrancelhas ficaram perfeitas 🥹💛"
+                    </p>
+                    <h3 class="lux-name">Marina Oliveira</h3>
+                </div>
 
-        <!-- Modal -->
-        <div class="modal" id="modal">
-            <div class="modal-content">
-                <button class="modal-close" onclick="closeModal()">✕</button>
-                <img id="modalImage" src="" alt="" class="modal-image">
-                <div class="modal-info">
-                    <span class="modal-style" id="modalStyle"></span>
-                    <h2 id="modalTitle"></h2>
-                    <p id="modalDescription"></p>
-                    <div class="modal-cta">
-                        <a href="index.html#contact" class="btn btn-primary">Agendar Consulta</a>
-                        <a href="index.html#contact" class="btn btn-secondary">Solicitar Orçamento</a>
-                    </div>
+                <!-- Card 4 -->
+                <div class="lux-card">
+                    <div class="lux-glow"></div>
+                    <img src="/img/lara-1.jpeg" alt="Lara Pinheiro" class="lux-photo">
+                    <p class="lux-text">
+                        "Não poderia deixar de te falar o quanto você é incrível no que faz. Dá pra sentir o cuidado, o carinho e a dedicação em tudo. Você é extremamente profissional, atenciosa e passa muita confiança. Além disso, como pessoa, é incrível e faz a gente se sentir super à vontade. Parabéns pelo seu trabalho e por quem você é! 💖✨"
+                    </p>
+                    <h3 class="lux-name">Lara Pinheiro</h3>
                 </div>
             </div>
-        </div>
-
-        
-
-        <!-- TESTIMONIALS LUXURY SECTION -->
-<section class="lux-testimonials">
-
-  <h2 class="lux-title">Experiência dos Clientes</h2>
-
-  <div class="lux-container">
-
-    <!-- Card -->
-    <div class="lux-card">
-      <div class="lux-glow"></div>
-
-      <img src="./img/babi.png" class="lux-photo">
-
-      <p class="lux-text">
-        "Bru, não posso deixar de agradecer o seu cuidado com as minhas sobrancelhas a cada encontro nosso… admiro muito o seu trabalho, admiro o seu cuidado comigo, o seu atendimento impecável, um ambiente leve, livre da agitação que eu tô acostumada.
- 
-Meu compromisso quinzenal com você é inegociável e se tornou para muito além de uma prestação de serviço, o encontro com uma grande amiga! ❤️ 
-Te admiro muito!!!"
-      </p>
-
-      <h3 class="lux-name">Bárbara Mercante </h3>
-    </div>
-
-    <!-- Card -->
-    <div class="lux-card">
-      <div class="lux-glow"></div>
-
-      <img src="./img/angel.jpeg" class="lux-photo">
-
-      <p class="lux-text">
-        "Amiga, queria agradecer pelo seu excelente trabalho. Admiro o cuidado e o carinho que você tem com cada cliente.
-Um atendimento perfeito e impecável. Uma profissional de excelência "
-      </p>
-
-      <h3 class="lux-name">Angélica Martins</h3>
-    </div>
-
-    <!-- Card -->
-    <div class="lux-card">
-      <div class="lux-glow"></div>
-
-      <img src="https://via.placeholder.com/140" class="lux-photo">
-
-      <p class="lux-text">
-        "Marca exclusiva. Comprarei novamente sem dúvidas."
-      </p>
-
-      <h3 class="lux-name">Fernanda Lima</h3>
-    </div>
-
-  </div>
-</section>
-
-<style>
-
-/* ===== FUNDO ===== */
-
-.lux-testimonials {
-  background: radial-gradient(circle at top, #0a0a0a, #000000);
-  padding: 100px 20px;
-  text-align: center;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* ===== TITULO ===== */
-
-.lux-title {
-  font-size: 2.8rem;
-  margin-bottom: 70px;
-  background: linear-gradient(45deg, #ffd700, #d4af37, #fff0a5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 2px;
-}
-
-/* ===== CONTAINER ===== */
-
-.lux-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-/* ===== CARD ===== */
-
-.lux-card {
-  position: relative;
-  width: 320px;
-  padding: 40px 30px;
-  border-radius: 22px;
-
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(12px);
-
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  overflow: hidden;
-
-  transition: 0.5s;
-}
-
-/* Glow animado */
-.lux-glow {
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,215,0,0.2), transparent 60%);
-  top: -50%;
-  left: -50%;
-  opacity: 0;
-  transition: 0.6s;
-}
-
-.lux-card:hover .lux-glow {
-  opacity: 1;
-}
-
-/* Hover luxo */
-.lux-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  border: 1px solid gold;
-  box-shadow: 0 0 35px rgba(255, 215, 0, 0.3);
-}
-
-/* ===== FOTO ===== */
-
-.lux-photo {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid transparent;
-  background: linear-gradient(black, black) padding-box,
-              linear-gradient(45deg, #ffd700, #d4af37, #fff0a5) border-box;
-  margin-bottom: 25px;
-}
-
-/* ===== TEXTO ===== */
-
-.lux-text {
-  color: #e6c86e;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  font-style: italic;
-  margin-bottom: 25px;
-}
-
-/* ===== NOME ===== */
-
-.lux-name {
-  font-size: 1.3rem;
-  font-weight: bold;
-  background: linear-gradient(45deg, #ffd700, #fff0a5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-</style>
-
+        </section>
 
         <!-- Location Section -->
         <section id="location">
@@ -1719,189 +1833,123 @@ Um atendimento perfeito e impecável. Uma profissional de excelência "
                     </div>
 
                     <div class="contact-info animate-slide-in-right">
-    <div class="contact-card">
-        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <div class="contact-text">
-            <h4>Endereço</h4>
-            <p>R. Ana Rodrigues Corrêa, Nº 175<br>Ourinhos, SP - 19905-255</p>
-            <p>Bairro: Res Padre Eduardo Murante</p>
-        </div>
-    </div>
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-text">
+                                <h4>Endereço</h4>
+                                <p>R. Ana Rodrigues Corrêa, Nº 175<br>Ourinhos, SP - 19905-255</p>
+                                <p>Bairro: Res Padre Eduardo Murante</p>
+                            </div>
+                        </div>
 
-    
-
-    
-
-    <div class="contact-card">
-        <div class="contact-icon"><i class="fas fa-clock"></i></div>
-        <div class="contact-text">
-            <h4>Horário</h4>
-            <p>Segunda/Sexta 08:00 - 19:00</p>
-            <p>Sab: 08:00 às 13:00</p>
-        </div>
-    </div>
-</div>
-
+                        <div class="contact-card">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div class="contact-text">
+                                <h4>Horário</h4>
+                                <p>Segunda/Sexta 08:00 - 19:00</p>
+                                <p>Sab: 08:00 às 13:00</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CSS para adicionar ao seu <style> existente -->
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Quicksand:wght@300;400;500;600;700&display=swap');
+        <!-- Contact Section -->
+        <section id="contact" class="section-dark">
+            <div class="container">
+                <div class="section-title">
+                    <div class="section-badge">Contato</div>
+                    <h2>Entre em Contato Conosco</h2>
+                    <p>Escolha a melhor forma de nos contatar e agende seu atendimento</p>
+                </div>
 
-    :root {
-        --gold-lux: #D4AF37;
-        --gold-bright: #F1D592;
-        --black-bg: #0A0A0A;
-        --white-text: #FFFFFF;
-        --gray-text: #A0A0A0;
-    }
+                <div class="cta-content">
+                    <div class="cta-methods">
+                        <a href="https://wa.me/5511987654321" class="cta-method" target="_blank">
+                            <div class="cta-method-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="cta-method-text">
+                                <h4>WhatsApp</h4>
+                                <p>Envie uma mensagem direta</p>
+                            </div>
+                        </a>
 
-    .premium-footer {
-        background-color: var(--black-bg);
-        color: var(--white-text);
-        padding: 80px 0 40px 0;
-        /* Usando Quicksand para um toque arredondado e suave de beleza */
-        font-family: 'Quicksand', sans-serif;
-        border-top: 2px solid var(--gold-lux);
-        position: relative;
-    }
+                        <a href="tel:+5511987654321" class="cta-method">
+                            <div class="cta-method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="cta-method-text">
+                                <h4>Telefone</h4>
+                                <p>(11) 98765-4321</p>
+                            </div>
+                        </a>
 
-    .premium-footer::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 200px;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, var(--gold-lux), transparent);
-        box-shadow: 0 0 20px var(--gold-lux);
-    }
+                        <a href="mailto:contato@brunatoalhares.com" class="cta-method">
+                            <div class="cta-method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="cta-method-text">
+                                <h4>Email</h4>
+                                <p>contato@brunatoalhares.com</p>
+                            </div>
+                        </a>
+                    </div>
 
-    .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
 
-    /* Centralização da Grid Principal */
-    .footer-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 40px;
-        margin-bottom: 50px;
-    }
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
 
-    .footer-brand h3 {
-        /* Outfit para o título para manter a força da marca */
-        font-family: 'Outfit', sans-serif;
-        color: var(--gold-lux);
-        font-size: 2.5rem;
-        font-weight: 800;
-        margin-bottom: 15px;
-        letter-spacing: 1px;
-    }
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
 
-    .footer-brand p {
-        color: var(--gray-text);
-        line-height: 1.8;
-        font-size: 1.1rem;
-        max-width: 600px;
-        margin: 0 auto 30px auto;
-    }
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
 
-    /* Centralização dos Ícones */
-    .social-box {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
+                        <button type="submit" class="form-submit">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    .social-icons {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .social-icons a {
-        color: var(--gold-lux);
-        font-size: 2rem; /* Aumentado para melhor visibilidade */
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .social-icons a:hover {
-        transform: scale(1.3) translateY(-10px);
-        color: var(--gold-bright);
-        filter: drop-shadow(0 0 15px var(--gold-lux));
-    }
-
-    .footer-bottom {
-        border-top: 1px solid rgba(212, 175, 55, 0.1);
-        padding-top: 30px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .footer-bottom p {
-        color: var(--gray-text);
-        font-size: 0.95rem;
-        margin: 0;
-    }
-
-    .footer-bottom strong {
-        color: var(--gold-lux);
-    }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-        .premium-footer {
-            padding: 60px 0 30px 0;
-        }
-
-        .footer-brand h3 {
-            font-size: 2rem;
-        }
-
-        .social-icons {
-            gap: 1.5rem;
-        }
-    }
-</style>
-
-<footer class="premium-footer">
-    <div class="footer-container">
-        <div class="footer-grid">
-            <!-- Identidade e Redes Centralizadas -->
-            <div class="footer-brand">
-                <h3>Bruna Toalhares</h3>
-                <p>Siga-nos nas redes sociais e fique por dentro das novidades. Transformando olhares com a elegância e a suavidade que você merece.</p>
-                
-                <div class="social-box">
-                    <div class="social-icons">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <!-- Footer -->
+    <footer class="premium-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Bruna Toalhares</h3>
+                    <p>Siga-nos nas redes sociais e fique por dentro das novidades. Transformando olhares com a elegância e a suavidade que você merece.</p>
+                    
+                    <div class="social-box">
+                        <div class="social-icons">
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Rodapé Final -->
-        <div class="footer-bottom">
-            <p>&copy; 2026 Bruna Toalhares. Todos os direitos reservados.</p>
-            <p>Desenvolvido com excelência por <strong>HardTech Info</strong>.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bruna Toalhares. Todos os direitos reservados.</p>
+                <p>Desenvolvido por <strong>HardTech Info Soluções em Ti 2026</strong>.</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
+
     <!-- WhatsApp Button -->
     <a href="https://wa.me/5511987654321" target="_blank" class="whatsapp-btn" title="Envie uma mensagem via WhatsApp">
         <i class="fab fa-whatsapp"></i>
@@ -1909,7 +1957,9 @@ Um atendimento perfeito e impecável. Uma profissional de excelência "
 
     <!-- Scripts -->
     <script>
-        // Mobile Menu Toggle
+        // ============================================
+        // MOBILE MENU TOGGLE
+        // ============================================
         const menuToggle = document.getElementById('menuToggle');
         const mobileNav = document.getElementById('mobileNav');
 
@@ -1925,7 +1975,9 @@ Um atendimento perfeito e impecável. Uma profissional de excelência "
             });
         });
 
-        // Form Submission
+        // ============================================
+        // FORM SUBMISSION
+        // ============================================
         const contactForm = document.getElementById('contactForm');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -1946,7 +1998,9 @@ Um atendimento perfeito e impecável. Uma profissional de excelência "
             contactForm.reset();
         });
 
-        // Smooth scroll for navigation
+        // ============================================
+        // SMOOTH SCROLL FOR NAVIGATION
+        // ============================================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1960,7 +2014,9 @@ Um atendimento perfeito e impecável. Uma profissional de excelência "
             });
         });
 
-        // Add animation to elements on scroll
+        // ============================================
+        // SCROLL ANIMATIONS
+        // ============================================
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1974,11 +2030,13 @@ Um atendimento perfeito e impecável. Uma profissional de excelência "
             });
         }, observerOptions);
 
-        document.querySelectorAll('.service-card, .testimonial-card, .contact-card').forEach(el => {
+        document.querySelectorAll('.service-card, .lux-card, .contact-card').forEach(el => {
             observer.observe(el);
         });
 
-        // Carousel Auto-Play
+        // ============================================
+        // CAROUSEL AUTO-PLAY
+        // ============================================
         let currentIndex = 0;
         const slides = document.querySelectorAll('.carousel-slide');
         const dots = document.querySelectorAll('.dot');
@@ -2026,7 +2084,9 @@ Um atendimento perfeito e impecável. Uma profissional de excelência "
             startAutoPlay();
         }
 
-        // Catálogo Gallery Data
+        // ============================================
+        // GALLERY DATA
+        // ============================================
         const galleryItems = [
             {
                 id: 1,
@@ -2111,7 +2171,7 @@ Um atendimento perfeito e impecável. Uma profissional de excelência "
             const filtered = filter === 'all' 
                 ? galleryItems 
                 : galleryItems.filter(item => item.category === filter);
-
+    
             filtered.forEach((item, index) => {
                 const div = document.createElement('div');
                 div.className = 'gallery-item';
