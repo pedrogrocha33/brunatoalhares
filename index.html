@@ -1164,11 +1164,11 @@
                 margin-bottom: 50px;
             }
 
-            .lux-card {
-                width: 100%;
-                max-width: 320px;
-                padding: 30px 20px;
-            }
+           .lux-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
             .lux-container {
                 gap: 20px;
@@ -1182,7 +1182,8 @@
             }
 
             .lux-text {
-                font-size: 0.95rem;
+                flex: 1; /* ocupa todo espaço disponível */
+                margin-bottom: 20px;
             }
         }
 
@@ -1196,7 +1197,8 @@
                 padding: 25px 15px;
             }
         }
-
+.lux-divider { flex-shrink: 0; }
+.lux-name    { flex-shrink: 0; }
         /* ============================================
            LOCATION SECTION
            ============================================ */
