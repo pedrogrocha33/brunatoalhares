@@ -1073,132 +1073,154 @@
             flex-wrap: wrap;
         }
 
-        /* ============================================
-           LUXURY TESTIMONIALS
-           ============================================ */
-        .lux-testimonials {
-            background: radial-gradient(circle at top, #0a0a0a, #000000);
-            padding: 100px 20px;
-            text-align: center;
-            font-family: 'Quicksand', sans-serif;
-        }
+    /* ============================================
+   LUXURY TESTIMONIALS
+   ============================================ */
+.lux-testimonials {
+    background: radial-gradient(circle at top, #0a0a0a, #000000);
+    padding: 100px 20px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
 
-        .lux-title {
-            font-size: 2.8rem;
-            margin-bottom: 70px;
-            background: linear-gradient(45deg, #ffd700, #d4af37, #fff0a5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 2px;
-        }
+.lux-title {
+    font-size: 2.8rem;
+    margin-bottom: 70px;
+    background: linear-gradient(45deg, #ffd700, #d4af37, #fff0a5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+}
 
-        .lux-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
+.lux-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: stretch;
+}
 
-        .lux-card {
-            position: relative;
-            width: 320px;
-            padding: 40px 30px;
-            border-radius: 22px;
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            overflow: hidden;
-            transition: 0.5s;
-        }
+.lux-card {
+    position: relative;
+    width: 320px;
+    padding: 40px 30px;
+    border-radius: 22px;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    overflow: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .lux-glow {
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent 60%);
-            top: -50%;
-            left: -50%;
-            opacity: 0;
-            transition: 0.6s;
-        }
+.lux-glow {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent 60%);
+    top: -50%;
+    left: -50%;
+    opacity: 0;
+    transition: 0.6s;
+    pointer-events: none;
+}
 
-        .lux-card:hover .lux-glow {
-            opacity: 1;
-        }
+.lux-card:hover .lux-glow {
+    opacity: 1;
+}
 
-        .lux-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            border: 1px solid gold;
-            box-shadow: 0 0 35px rgba(255, 215, 0, 0.3);
-        }
+.lux-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border: 1px solid gold;
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.3);
+}
 
-        .lux-photo {
-            width: 130px;
-            height: 130px;
-            border-radius: var(--radius-full);
-            object-fit: cover;
-            border: 3px solid transparent;
-            background: linear-gradient(black, black) padding-box, linear-gradient(45deg, #ffd700, #d4af37, #fff0a5) border-box;
-            margin-bottom: 25px;
-        }
+.lux-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent;
+    background: linear-gradient(black, black) padding-box,
+                linear-gradient(45deg, #ffd700, #d4af37, #fff0a5) border-box;
+    margin-bottom: 25px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
 
-        .lux-text {
-            color: #e6c86e;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            font-style: italic;
-            margin-bottom: 25px;
-        }
+.lux-text {
+    color: #e6c86e;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 0;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
 
-        .lux-name {
-            font-size: 1.3rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #ffd700, #fff0a5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.lux-divider {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+    margin: 25px 0 16px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
 
-        @media (max-width: 768px) {
-            .lux-title {
-                font-size: 2rem;
-                margin-bottom: 50px;
-            }
+.lux-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ffd700, #fff0a5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
 
-           .lux-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+@media (max-width: 768px) {
+    .lux-title {
+        font-size: 2rem;
+        margin-bottom: 50px;
+    }
 
-            .lux-container {
-                gap: 20px;
-                flex-direction: column;
-                align-items: center;
-            }
+    .lux-container {
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .lux-photo {
-                width: 110px;
-                height: 110px;
-            }
+    .lux-card {
+        width: 100%;
+        max-width: 400px;
+    }
 
-            .lux-text {
-                flex: 1; /* ocupa todo espaço disponível */
-                margin-bottom: 20px;
-            }
-        }
+    .lux-photo {
+        width: 110px;
+        height: 110px;
+    }
 
-        @media (max-width: 480px) {
-            .lux-title {
-                font-size: 1.5rem;
-            }
+    .lux-text {
+        font-size: 0.95rem;
+    }
+}
 
-            .lux-card {
-                max-width: 100%;
-                padding: 25px 15px;
-            }
-        }
-.lux-divider { flex-shrink: 0; }
-.lux-name    { flex-shrink: 0; }
+@media (max-width: 480px) {
+    .lux-title {
+        font-size: 1.5rem;
+    }
+
+    .lux-card {
+        max-width: 100%;
+        padding: 25px 15px;
+    }
+}
         /* ============================================
            LOCATION SECTION
            ============================================ */
@@ -1774,53 +1796,56 @@
             </div>
         </section>
 
-        <!-- Luxury Testimonials Section -->
-        <section class="lux-testimonials" id="testimonials">
-            <h2 class="lux-title">Experiência dos Clientes</h2>
+   <!-- Luxury Testimonials Section -->
+<section class="lux-testimonials" id="testimonials">
+    <h2 class="lux-title">Experiência dos Clientes</h2>
 
-            <div class="lux-container">
-                <!-- Card 1 -->
-                <div class="lux-card">
-                    <div class="lux-glow"></div>
-                    <img src="./img/babi.png" alt="Bárbara Mercante" class="lux-photo">
-                    <p class="lux-text">
-                        "Bru, não posso deixar de agradecer o seu cuidado com as minhas sobrancelhas a cada encontro nosso… admiro muito o seu trabalho, admiro o seu cuidado comigo, o seu atendimento impecável, um ambiente leve, livre da agitação que eu tô acostumada. Meu compromisso quinzenal com você é inegociável e se tornou para muito além de uma prestação de serviço, o encontro com uma grande amiga! ❤️"
-                    </p>
-                    <h3 class="lux-name">Bárbara Mercante</h3>
-                </div>
+    <div class="lux-container">
+        <!-- Card 1 -->
+        <div class="lux-card">
+            <div class="lux-glow"></div>
+            <img src="./img/babi.png" alt="Bárbara Mercante" class="lux-photo">
+            <p class="lux-text">
+                "Bru, não posso deixar de agradecer o seu cuidado com as minhas sobrancelhas a cada encontro nosso… admiro muito o seu trabalho, admiro o seu cuidado comigo, o seu atendimento impecável, um ambiente leve, livre da agitação que eu tô acostumada. Meu compromisso quinzenal com você é inegociável e se tornou para muito além de uma prestação de serviço, o encontro com uma grande amiga! ❤️"
+            </p>
+            <div class="lux-divider"></div>
+            <h3 class="lux-name">Bárbara Mercante</h3>
+        </div>
 
-                <!-- Card 2 -->
-                <div class="lux-card">
-                    <div class="lux-glow"></div>
-                    <img src="./img/angel.jpeg" alt="Angélica Martins" class="lux-photo">
-                    <p class="lux-text">
-                        "Amiga, queria agradecer pelo seu excelente trabalho. Admiro o cuidado e o carinho que você tem com cada cliente. Um atendimento perfeito e impecável. Uma profissional de excelência"
-                    </p>
-                    <h3 class="lux-name">Angélica Martins</h3>
-                </div>
+        <!-- Card 2 -->
+        <div class="lux-card">
+            <div class="lux-glow"></div>
+            <img src="./img/angel.jpeg" alt="Angélica Martins" class="lux-photo">
+            <p class="lux-text">
+                "Amiga, queria agradecer pelo seu excelente trabalho. Admiro o cuidado e o carinho que você tem com cada cliente. Um atendimento perfeito e impecável. Uma profissional de excelência"
+            </p>
+            <div class="lux-divider"></div>
+            <h3 class="lux-name">Angélica Martins</h3>
+        </div>
 
-                <!-- Card 3 -->
-                <div class="lux-card">
-                    <div class="lux-glow"></div>
-                    <img src="./img/marina.jpeg" alt="Marina Oliveira" class="lux-photo">
-                    <p class="lux-text">
-                        "❤️💕 Além de amiga você é uma profissional incrível !! Seu trabalho transforma olhares e aumenta auto estima nos deixando ainda mais lindas !!! Obrigada por tanto cuidado 😍minhas sobrancelhas ficaram perfeitas 🥹💛"
-                    </p>
-                    <h3 class="lux-name">Marina Oliveira</h3>
-                </div>
+        <!-- Card 3 -->
+        <div class="lux-card">
+            <div class="lux-glow"></div>
+            <img src="./img/marina.jpeg" alt="Marina Oliveira" class="lux-photo">
+            <p class="lux-text">
+                "❤️💕 Além de amiga você é uma profissional incrível !! Seu trabalho transforma olhares e aumenta auto estima nos deixando ainda mais lindas !!! Obrigada por tanto cuidado 😍minhas sobrancelhas ficaram perfeitas 🥹💛"
+            </p>
+            <div class="lux-divider"></div>
+            <h3 class="lux-name">Marina Oliveira</h3>
+        </div>
 
-                <!-- Card 4 -->
-                <div class="lux-card">
-                    <div class="lux-glow"></div>
-                    <img src="/img/lara-1.jpeg" alt="Lara Pinheiro" class="lux-photo">
-                    <p class="lux-text">
-                        "Não poderia deixar de te falar o quanto você é incrível no que faz. Dá pra sentir o cuidado, o carinho e a dedicação em tudo. Você é extremamente profissional, atenciosa e passa muita confiança. Além disso, como pessoa, é incrível e faz a gente se sentir super à vontade. Parabéns pelo seu trabalho e por quem você é! 💖✨"
-                    </p>
-                    <h3 class="lux-name">Lara Pinheiro</h3>
-                </div>
-            </div>
-        </section>
-
+        <!-- Card 4 -->
+        <div class="lux-card">
+            <div class="lux-glow"></div>
+            <img src="./img/lara-1.jpeg" alt="Lara Pinheiro" class="lux-photo">
+            <p class="lux-text">
+                "Não poderia deixar de te falar o quanto você é incrível no que faz. Dá pra sentir o cuidado, o carinho e a dedicação em tudo. Você é extremamente profissional, atenciosa e passa muita confiança. Além disso, como pessoa, é incrível e faz a gente se sentir super à vontade. Parabéns pelo seu trabalho e por quem você é! 💖✨"
+            </p>
+            <div class="lux-divider"></div>
+            <h3 class="lux-name">Lara Pinheiro</h3>
+        </div>
+    </div>
+</section>
         <!-- Location Section -->
         <section id="location">
             <div class="container">
